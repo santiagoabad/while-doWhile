@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class While {
+  final static Scanner input = new Scanner(System.in);
+	final static int NOTA_BASE = 0;
+	final static int NOTA_TOPE = 10;
+  public static void main(String[] args) {
+
+    int nota;
+		boolean esNotaValida;
+		
+		System.out.println("Ingrese la nota que desea validar.");
+		nota = Integer.parseInt(input.nextLine());
+		esNotaValida = nota >= NOTA_BASE && nota <= NOTA_TOPE;
+		
+		while(!esNotaValida) {
+			System.out.println("La nota ingresada está fuera de rango, vuelva a ingresarla.");
+			nota = Integer.parseInt(input.nextLine());
+		}
+		
+		System.out.println("La nota ingresada fue " + nota + ".");
+		
+		input.close();
+    
+  }
+}
